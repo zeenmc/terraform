@@ -66,13 +66,17 @@ resource "aws_security_group" "allow_traffic" {
   vpc_id      = aws_vpc.BrokenByteVPC.id
 
 
-ingress {
-    description = "Dozvoli SVEEEEEEEE"
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+
+#################################################
+# Just for testing, allow every ingress trafic, every protocol, from ANY IP!!!!
+################################################
+#ingress {
+#   description = "Dozvoli SVEEEEEEEE"
+#   from_port   = 0
+#   to_port     = 0
+#   protocol    = "-1"
+#   cidr_blocks = ["0.0.0.0/0"]
+# }
 
 ingress {
     description = "SSH traffic"
@@ -97,12 +101,17 @@ ingress {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+
+#################################################
+# Just for testing, allow every ingress trafic, every protocol, from ANY IP!!!!
+################################################
+#egress {
+#   description = "Dozvoli SVEEEEEEEE"
+#   from_port   = 0
+#   to_port     = 0
+#   protocol    = "-1"
+#   cidr_blocks = ["0.0.0.0/0"]
+# }
 
   tags = {
     Name = "Allow_ssh_http_https"
@@ -255,4 +264,3 @@ resource "aws_instance" "BrokenByteWWW3" {
                sudo bash -c 'echo WWW3 > /var/www/html/index.html'
                EOF
 }
-
