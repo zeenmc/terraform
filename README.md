@@ -1,2 +1,3 @@
-# AnsibleForDesktop
-Ansible script for configuration ubuntu (xUbuntu) workstations 
+# Terraform scripts for different infrastructure 
+
+AWS, ESXi,KVM, Docker...
